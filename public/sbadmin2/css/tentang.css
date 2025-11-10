@@ -1,0 +1,309 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    background: #f9f9f9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0d47a1, #1976d2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+    z-index: 1000;
+    opacity: 0.95;
+}
+
+.logo-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-left img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo-left span {
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-menu a {
+    color: #cccccc;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: white;
+    font-weight: 600;
+}
+
+.nav-menu .active {
+    color: white;
+    font-weight: 700;
+}
+
+.nav-menu span {
+    color: #d6d6d6;
+    font-weight: 700;
+}
+
+.btn-login {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover LOGIN untuk semua tampilan (mobile & desktop) */
+.btn-login:hover {
+    background: white;
+    color: #04132a !important;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== MENU RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar-top {
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: linear-gradient(to right, #0d47a1, #1976d2);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* ✅ Hover menu di mode mobile (hamburger menu aktif) */
+    @media (max-width: 768px) {
+        .nav-menu a {
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.15); /* efek hover terlihat */
+            color: #ffeb3b; /* kuning terang agar jelas */
+            transition: 0.2s ease;
+        }
+    }
+}
+
+/* ==== MAIN CONTENT TENTANG ==== */
+.tentang-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 130px auto 60px;
+    color: #222;
+}
+
+/* Judul */
+.section-judul {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-judul i {
+    font-size: 50px;
+    color: #0d6efd;
+}
+.section-judul h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Section Umum */
+section {
+    margin-bottom: 40px;
+}
+section h2 {
+    color: #0d6efd;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Fitur */
+.section-fitur {
+    text-align: center;
+}
+.fitur-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+.fitur-box {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.fitur-box i {
+    font-size: 40px;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+.fitur-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Kontribusi Box */
+.section-kontribusi {
+    background: #d4edf7;
+    padding: 20px;
+    border-left: 6px solid #0d6efd;
+    border-radius: 6px;
+}
+.section-kontribusi i {
+    color: #0d6efd;
+    margin-right: 10px;
+}
+
+/* Lisensi */
+.section-lisensi h2 {
+    margin-bottom: 5px;
+}
+.section-lisensi p {
+    font-size: 17px;
+}
+
+/* COPYRIGHT */
+.section-lisensi .copyright {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+    .fitur-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .section-judul h1 {
+        font-size: 30px;
+    }
+    .fitur-grid {
+        grid-template-columns: 1fr;
+    }
+    .fitur-box h3 {
+        font-size: 20px;
+    }
+}
+
+/* ====== FOOTER ====== */
+.footer-login {
+    background: linear-gradient(to right, #0d47a1, #1976d2);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: linear-gradient(to right, #0d47a1, #1976d2);
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 10px 0;
+        color: white;
+    }
+
+    .btn-login {
+        background: none;
+        border: 1px solid white;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-left span {
+        font-size: 22px;
+    }
+
+    .title-text {
+        font-size: 22px;
+    }
+}
