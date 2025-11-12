@@ -18,18 +18,23 @@
         <div class="login-box">
             <h2>Login System</h2>
 
-            <form>
+            <form action="{{ route('Menulogin.post') }}" method="POST">
+                @csrf
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" required>
                 </div>
 
                 <div class="input-group">
                     <i class="fas fa-key"></i>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
 
                 <button type="submit" class="btn-login">Login</button>
+
+                    @if ($errors->any())
+                    <p style="color: red; margin-top: 10px;">{{ $errors->first() }}</p>
+                     @endif
             </form>
 
             <p class="copyright">
